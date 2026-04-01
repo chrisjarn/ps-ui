@@ -2,7 +2,7 @@ import * as React from 'react'
 import * as RadixDialog from '@radix-ui/react-dialog'
 import { AnimatePresence, motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
-import { spring, tween } from '@/lib/transitions'
+import { ck } from '@/lib/transitions'
 
 interface DialogProps {
   open?: boolean
@@ -52,7 +52,7 @@ export function DialogContent({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={tween.normal}
+              transition={ck.overlay}
               onClick={onClose}
             />
           </RadixDialog.Overlay>
@@ -70,10 +70,10 @@ export function DialogContent({
                 className
               )}
               style={{ maxWidth, x: '-50%', y: '-50%' }}
-              initial={{ opacity: 0, scale: 0.95, y: '-46%' }}
+              initial={{ opacity: 0, scale: 0.97, y: '-48%' }}
               animate={{ opacity: 1, scale: 1, y: '-50%' }}
-              exit={{ opacity: 0, scale: 0.95, y: '-46%' }}
-              transition={spring.gentle}
+              exit={{ opacity: 0, scale: 0.97, y: '-48%' }}
+              transition={ck.box}
               {...(props as React.ComponentProps<typeof motion.div>)}
             >
               <div
