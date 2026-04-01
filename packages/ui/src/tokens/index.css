@@ -32,6 +32,14 @@
   --ps-body-divider: rgba(255, 255, 255, 0.08);
   --ps-body-divider-strong: rgba(255, 255, 255, 0.14);
 
+  /* ─── Brand (override these to retheme everything) ─────────────── */
+  --ps-brand-rgb: 99, 102, 241;              /* same as primary, for rgba() usage */
+  --ps-brand-tint-bg: rgba(99, 102, 241, 0.12);
+  --ps-brand-tint-bg-subtle: rgba(99, 102, 241, 0.08);
+  --ps-brand-tint-border: rgba(99, 102, 241, 0.2);
+  --ps-brand-tint-text: #818cf8;             /* lighter shade — text on dark */
+  --ps-brand-tint-text-subtle: #a5b4fc;      /* even lighter */
+
   /* ─── Primary Button ───────────────────────────────────────────── */
   --ps-primary-button-background: #6366f1;
   --ps-primary-button-color: #ffffff;
@@ -55,13 +63,13 @@
   --ps-modal-background: var(--ps-body-background);
   --ps-modal-border: 1px solid rgba(255, 255, 255, 0.06);
   --ps-overlay-background: rgba(0, 0, 0, 0.6);
-  --ps-overlay-backdrop-filter: blur(8px);
+  --ps-overlay-backdrop-filter: blur(24px);   /* ConnectKit value */
 
   /* ─── Input ────────────────────────────────────────────────────── */
   --ps-input-background: rgba(255, 255, 255, 0.04);
   --ps-input-background-focus: rgba(255, 255, 255, 0.07);
   --ps-input-border: 1px solid rgba(255, 255, 255, 0.1);
-  --ps-input-border-focus: 1px solid rgba(99, 102, 241, 0.6);
+  --ps-input-border-focus: 1px solid rgba(var(--ps-brand-rgb), 0.6);
   --ps-input-border-error: 1px solid rgba(239, 68, 68, 0.6);
   --ps-input-border-valid: 1px solid rgba(16, 185, 129, 0.6);
   --ps-input-border-radius: 14px;
@@ -89,7 +97,7 @@
   --ps-transition-slow: 300ms cubic-bezier(0.2, 0, 0, 1);
 
   /* ─── Focus Ring ───────────────────────────────────────────────── */
-  --ps-focus-ring: 0 0 0 2px rgba(99, 102, 241, 0.5);
+  --ps-focus-ring: 0 0 0 2px rgba(var(--ps-brand-rgb), 0.5);
 }
 
 /* ─── Midnight Theme Preset ─────────────────────────────────────── */
@@ -105,6 +113,23 @@
     0px 2px 4px rgba(0, 0, 0, 0.04),
     0px 8px 24px rgba(0, 0, 0, 0.14),
     0px 32px 64px rgba(0, 0, 0, 0.24);
+}
+
+/* ─── Primary Button Glass Effect ──────────────────────────────── */
+/*
+ * Using background-image (not background shorthand) so Tailwind's
+ * background-color utilities still apply and hover works correctly.
+ * The gradient sits on top of the solid background-color.
+ */
+@layer utilities {
+  .ps-btn-primary {
+    background-image: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  }
 }
 
 /* ─── Base Resets ───────────────────────────────────────────────── */

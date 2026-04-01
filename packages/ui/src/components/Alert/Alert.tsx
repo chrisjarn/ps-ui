@@ -7,7 +7,7 @@ const alertVariants = cva(
   {
     variants: {
       variant: {
-        info: 'bg-[rgba(99,102,241,0.08)] border-[rgba(99,102,241,0.2)] text-[#a5b4fc]',
+        info: 'bg-[var(--ps-brand-tint-bg-subtle)] border-[var(--ps-brand-tint-border)] text-[var(--ps-brand-tint-text-subtle)]',
         success: 'bg-[rgba(16,185,129,0.08)] border-[rgba(16,185,129,0.2)] text-ps-valid',
         warning: 'bg-[rgba(245,158,11,0.08)] border-[rgba(245,158,11,0.2)] text-ps-warning',
         danger: 'bg-[rgba(239,68,68,0.08)] border-[rgba(239,68,68,0.2)] text-ps-danger',

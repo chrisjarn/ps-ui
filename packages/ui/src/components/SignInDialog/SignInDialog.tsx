@@ -64,7 +64,11 @@ export function SignInDialog({
             <RadixDialog.Overlay asChild>
               <motion.div
                 className="fixed inset-0 z-50"
-                style={{ backgroundColor: 'var(--ps-overlay-background)', backdropFilter: 'blur(8px)' }}
+                style={{
+                  backgroundColor: 'var(--ps-overlay-background)',
+                  backdropFilter: 'var(--ps-overlay-backdrop-filter)',
+                  WebkitBackdropFilter: 'var(--ps-overlay-backdrop-filter)',
+                }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -312,7 +316,7 @@ function PasskeyView({ onSubmit }: { onSubmit: () => void }) {
       <motion.div
         className="relative h-20 w-20 rounded-full"
         style={{
-          background: 'conic-gradient(from 0deg, rgba(99,102,241,0.8) 0%, rgba(99,102,241,0) 40%, rgba(99,102,241,0) 60%, rgba(99,102,241,0.8) 100%)',
+          background: 'conic-gradient(from 0deg, rgba(var(--ps-brand-rgb),0.8) 0%, rgba(var(--ps-brand-rgb),0) 40%, rgba(var(--ps-brand-rgb),0) 60%, rgba(var(--ps-brand-rgb),0.8) 100%)',
           padding: 2,
         }}
         animate={{ rotate: 360 }}
@@ -320,8 +324,8 @@ function PasskeyView({ onSubmit }: { onSubmit: () => void }) {
       >
         <div className="flex h-full w-full items-center justify-center rounded-full bg-[var(--ps-body-background)]">
           <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-            <circle cx="12" cy="12" r="5" stroke="#6366f1" strokeWidth="2"/>
-            <path d="M17 12h6M20 9v6M17 12l3-3" stroke="#6366f1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <circle cx="12" cy="12" r="5" stroke="var(--ps-primary-button-background)" strokeWidth="2"/>
+            <path d="M17 12h6M20 9v6M17 12l3-3" stroke="var(--ps-primary-button-background)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </div>
       </motion.div>

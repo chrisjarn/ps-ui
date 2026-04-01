@@ -8,7 +8,7 @@ const badgeVariants = cva(
     variants: {
       variant: {
         default: 'bg-[rgba(255,255,255,0.08)] text-ps-text',
-        primary: 'bg-[rgba(99,102,241,0.15)] text-[#818cf8]',
+        primary: 'bg-[var(--ps-brand-tint-bg)] text-[var(--ps-brand-tint-text)]',
         success: 'bg-[rgba(16,185,129,0.12)] text-ps-valid',
         warning: 'bg-[rgba(245,158,11,0.12)] text-ps-warning',
         danger: 'bg-[rgba(239,68,68,0.12)] text-ps-danger',
@@ -44,7 +44,7 @@ export function Badge({ className, variant, size, dot, children, ...props }: Bad
             variant === 'success' && 'bg-ps-valid',
             variant === 'warning' && 'bg-ps-warning',
             variant === 'danger' && 'bg-ps-danger',
-            variant === 'primary' && 'bg-[#818cf8]',
+            variant === 'primary' && 'bg-[var(--ps-brand-tint-text)]',
             (variant === 'default' || variant === 'outline') && 'bg-ps-muted',
           )}
           aria-hidden="true"

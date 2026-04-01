@@ -44,7 +44,11 @@ export function DialogContent({
           <RadixDialog.Overlay asChild>
             <motion.div
               className="fixed inset-0 z-50"
-              style={{ backgroundColor: 'var(--ps-overlay-background)' }}
+              style={{
+                backgroundColor: 'var(--ps-overlay-background)',
+                backdropFilter: 'var(--ps-overlay-backdrop-filter)',
+                WebkitBackdropFilter: 'var(--ps-overlay-backdrop-filter)',
+              }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}

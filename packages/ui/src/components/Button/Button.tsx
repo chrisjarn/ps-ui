@@ -22,9 +22,10 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary: [
+          // Glass gradient sits on top via background-image in tokens (.ps-btn-primary)
+          'ps-btn-primary',
           'bg-ps-primary text-ps-primary-text',
           'hover:bg-ps-primary-hover',
-          // Border matches ConnectKit pattern
           'border border-transparent',
         ],
         secondary: [
